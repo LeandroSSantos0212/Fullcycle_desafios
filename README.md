@@ -12,3 +12,5 @@ docker run --rm leandro0212/fullcycle_rocks
 Desafio Docker NodeJs
 
 Execute o comando docker-compose up --build ou docker compose up --build
+
+Acesse a aplicação http://localhost:9095
