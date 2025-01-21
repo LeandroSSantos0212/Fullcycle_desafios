@@ -7,7 +7,7 @@ link para dockerhub https://hub.docker.com/repository/docker/leandro0212/fullcyc
 
 comando de execução da imagem
 
-docker run --rm leandro0212/fullcycle_rocks
+docker run --rm leandro0212/fullcycle_rocks:v2
 
 Desafio Docker NodeJs
 
