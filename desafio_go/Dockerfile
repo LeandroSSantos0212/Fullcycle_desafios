@@ -1,16 +1,15 @@
-FROM golang:latest AS builder
+FROM golang:1.21-alpine AS builder
 
-WORKDIR /go/src/app
+WORKDIR /app
 
 COPY . .
 
-RUN go build -o fullcycle_Rocks fullcycle_Rocks.go
+RUN go mod download && go mod verify
 
+RUN go build -o fullcycle_Rocks fullcycle_Rocks.go
 
 FROM scratch
 
-WORKDIR /root
+COPY --from=builder /app/fullcycle_Rocks /fullcycle_Rocks
 
-COPY --from=builder /go/src/app/fullcycle_Rocks .
-
-CMD ["./fullcycle_Rocks"]
+CMD ["/fullcycle_Rocks"]

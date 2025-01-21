@@ -6,7 +6,7 @@ services:
       context: .
     container_name: app
     volumes:
-      - ./node:/usr/src/app
+      - ./node:/app
     tty: true
     networks:
       - node-network
