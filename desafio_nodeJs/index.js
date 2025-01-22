@@ -24,7 +24,7 @@ connection.query(`
 });
 
 // Inserir dados iniciais
-const names = ['leandro', 'joao', 'maria', 'jose', 'pedro', 'ana', 'carlos', 'lucas', 'lucia', 'luciano'];
+const names = ['leandro', 'joao', 'maria', 'jose', 'pedro', 'ana', 'carlos', 'lucas', 'lucia', 'luciano', 'luan'];
 names.forEach(name => {
     const sql = `INSERT INTO people(name) values('${name}')`;
     connection.query(sql, (err) => {

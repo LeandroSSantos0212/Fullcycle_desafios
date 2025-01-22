@@ -1,6 +1,6 @@
 FROM node:14 AS builder
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Instalar Dockerize
 ENV DOCKERIZE_VERSION v0.6.1
@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y wget \
 
 # Instalar dependências
 COPY package*.json ./
+
 RUN npm install
 
 # Copiar arquivos da aplicação
@@ -21,3 +22,5 @@ EXPOSE 3000
 
 # Usar Dockerize para esperar pelo banco de dados
 CMD ["dockerize", "-wait", "tcp://db:3306", "-timeout", "30s", "node", "index.js"]
+
+

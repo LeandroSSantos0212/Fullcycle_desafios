@@ -1,4 +1,4 @@
-version: "3"
+version: "3.9"
 
 services:
   app:
@@ -6,7 +6,7 @@ services:
       context: .
     container_name: app
     volumes:
-      - ./node:/app
+      - /node_nodejs:/usr/src/app"
     tty: true
     networks:
       - node-network
@@ -41,3 +41,6 @@ services:
 networks:
   node-network:
     driver: bridge
+
+volumes:
+  node: # Define o volume 'node'
